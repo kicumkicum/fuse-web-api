@@ -1,10 +1,8 @@
 package api
 
 import (
-	"net/http"
+	"../fs/"
 )
-
 type IBase interface {
-	Get(url string) (*http.Response, error)
-	Post(url string, bodyType string, body string) (*http.Response, error)
+	ReadContent(path string) (fs.IContent, error)
 }
